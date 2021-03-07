@@ -6,4 +6,4 @@ To run:
 * git clone https://github.com/snh3003/facefun.git
 * cd facefun
 * npm i
-* npm run start-dev
+* npm run dev
