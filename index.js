@@ -148,9 +148,13 @@ let nose = {}
 let rightEye = {}
 let leftEye = {}
 
-poseNet.on('pose',  function(results) {
+poseNet.on('pose',  (results) => {
   let poses = results;
-  console.log(poses);
+
+  module.exports = poses;
+  // console.log(poses);
+
+
 
   // filename of data
   var fileName = 'myData.json';
@@ -221,4 +225,3 @@ function onWindowResize() {
   //  video.setAttribute('width', window.innerWidth/2);
   //  video.setAttribute('height', window.innerWidth/2);
 }
-

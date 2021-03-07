@@ -95,7 +95,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var ml5__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ml5 */ "./node_modules/ml5/dist/ml5.min.js");
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var ml5__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ml5 */ "./node_modules/ml5/dist/ml5.min.js");
 /* harmony import */ var ml5__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(ml5__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var three__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! three */ "./node_modules/three/build/three.module.js");
 /* harmony import */ var _threeJs_nose__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./threeJs/nose */ "./threeJs/nose.js");
@@ -251,9 +251,13 @@ let nose = {}
 let rightEye = {}
 let leftEye = {}
 
-poseNet.on('pose',  function(results) {
+poseNet.on('pose',  (results) => {
   let poses = results;
-  console.log(poses);
+
+  module.exports = poses;
+  // console.log(poses);
+
+
 
   // filename of data
   var fileName = 'myData.json';
@@ -325,7 +329,7 @@ function onWindowResize() {
   //  video.setAttribute('height', window.innerWidth/2);
 }
 
-
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/webpack/buildin/harmony-module.js */ "./node_modules/webpack/buildin/harmony-module.js")(module)))
 
 /***/ }),
 
@@ -49892,6 +49896,41 @@ try {
 // easier to handle this case. if(!global) { ...}
 
 module.exports = g;
+
+
+/***/ }),
+
+/***/ "./node_modules/webpack/buildin/harmony-module.js":
+/*!*******************************************!*\
+  !*** (webpack)/buildin/harmony-module.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function(originalModule) {
+	if (!originalModule.webpackPolyfill) {
+		var module = Object.create(originalModule);
+		// module.parent = undefined by default
+		if (!module.children) module.children = [];
+		Object.defineProperty(module, "loaded", {
+			enumerable: true,
+			get: function() {
+				return module.l;
+			}
+		});
+		Object.defineProperty(module, "id", {
+			enumerable: true,
+			get: function() {
+				return module.i;
+			}
+		});
+		Object.defineProperty(module, "exports", {
+			enumerable: true
+		});
+		module.webpackPolyfill = 1;
+	}
+	return module;
+};
 
 
 /***/ }),
